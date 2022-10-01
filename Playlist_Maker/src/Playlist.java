@@ -16,7 +16,7 @@ public class Playlist {
 		// correct parameters into album.addSong();
 		Album album = new Album("Enter the Wu-Tang (36 Chambers)", "Wu-Tang Clan");
 		album.addSong("Bring da Ruckus", 4, 10);
-		album.addSong("Shame on a Nigga", 2, 57);
+		album.addSong("Shame on a Niall", 2, 57);
 		album.addSong("Clan in da Front", 4, 33);
 		album.addSong("Wu-Tang: 7th Chamber", 6, 05);
 		album.addSong("Can It Be All So Simple", 4, 46);
@@ -136,6 +136,8 @@ public class Playlist {
 					break;
 				case 5:
 					printList(playlist);
+					System.out.println("===========================");
+					printMenu();
 					break;
 				case 6:
 					printMenu();
@@ -153,26 +155,17 @@ public class Playlist {
 
 	private static void printMenu() {
 
-		System.out.println("""
-				0 - Quit
-				1 - Next Song
-				2 - Previous Song
-				3 - Replay Current Song
-				4 - Delete Current Song
-				5 - Show Playlist
-				6 - Show Options
-				Select an option from above:
-				""");
+		System.out.println("0 - Quit\n" + "1 - Next Song\n" + "2 - Previous Song\n" + "3 - Replay Current Song\n"
+				+ "4 - Delete Current Song\n" + "5 - Show Playlist\n" + "6 - Show Options\n"
+				+ "Select option from list:");
 	}
 
-	private static void printList(LinkedList<Song> playlist) {
+	public static void printList(LinkedList<Song> playlist) {
 		Iterator<Song> iterator = playlist.iterator();
 		System.out.println("Current Playlist:");
 		System.out.println("========================");
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next());
 		}
-		System.out.println("========================");
 	}
-
 }
